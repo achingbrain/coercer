@@ -10,7 +10,7 @@ npm install --save coercer
 
 ## Usage
 
-```
+```javascript
 var coercer = require('coercer')
 
 coerce({
