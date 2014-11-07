@@ -15,6 +15,10 @@ function coerce(obj) {
       return true
     }
 
+    if(obj == 'undefined') {
+      return undefined
+    }
+
     if(isFinite(obj)) {
       return parseFloat(obj)
     }

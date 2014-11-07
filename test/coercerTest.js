@@ -12,7 +12,8 @@ describe('coercer', function() {
       },
       'corge': ['7', '93.2', 'false'],
       'grault': true,
-      'garply': false
+      'garply': false,
+      'waldo': 'undefined'
     })
 
     expect(output.foo).to.be.true
@@ -25,5 +26,6 @@ describe('coercer', function() {
     expect(output.corge[2]).to.be.false,
     expect(output.grault).to.be.true
     expect(output.garply).to.be.false
+    expect(output.waldo).to.be.undefined
   })
 })
