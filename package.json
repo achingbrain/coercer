@@ -1,0 +1,27 @@
+{
+  "name": "coercer",
+  "version": "1.0.0",
+  "description": "Turns objects/arrays full of strings into primitive values",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "author": "Alex Potsides <alex@achingbrain.net>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/achingbrain/coercer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achingbrain/coercer/issues"
+  },
+  "devDependencies": {
+    "coveralls": "^2.8",
+    "istanbul": "^0.3.0",
+    "mocha": "^1.0",
+    "proxyquire": "^1.0",
+    "chai": "^1.0",
+    "sinon": "^1.8"
+  }
+}
