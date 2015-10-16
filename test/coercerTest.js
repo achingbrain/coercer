@@ -1,8 +1,10 @@
-var expect = require('chai').expect,
-  coercer = require('../')
+var describe = require('mocha').describe
+var it = require('mocha').it
+var expect = require('chai').expect
+var coercer = require('../')
 
-describe('coercer', function() {
-  it('should coerce values', function() {
+describe('coercer', function () {
+  it('should coerce values', function () {
     var output = coercer({
       'foo': 'true',
       'bar': '5',
@@ -13,7 +15,8 @@ describe('coercer', function() {
       'corge': ['7', '93.2', 'false'],
       'grault': true,
       'garply': false,
-      'waldo': 'undefined'
+      'waldo': 'undefined',
+      'fred': ['']
     })
 
     expect(output.foo).to.be.true
@@ -23,9 +26,10 @@ describe('coercer', function() {
     expect(output.corge.length).to.equal(3)
     expect(output.corge[0]).to.equal(7)
     expect(output.corge[1]).to.equal(93.2)
-    expect(output.corge[2]).to.be.false,
+    expect(output.corge[2]).to.be.false
     expect(output.grault).to.be.true
     expect(output.garply).to.be.false
     expect(output.waldo).to.be.undefined
+    expect(output.fred[0]).to.equal('')
   })
 })
