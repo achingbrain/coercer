@@ -24,7 +24,25 @@ function coerce (obj) {
     }
 
     if (isFinite(obj)) {
-      return parseFloat(obj)
+      var radix = 10
+      var val
+
+      if (obj.toString().substring(0, 2) === '0x') {
+        radix = 6
+        obj = obj.toString().substring(2)
+      }
+
+      if (radix === 10) {
+        val = parseFloat(obj)
+
+        if (val.toString(radix) !== obj.toString(radix)) {
+          return obj
+        }
+      } else {
+        val = parseInt(obj, radix)
+      }
+
+      return val
     }
 
     return obj

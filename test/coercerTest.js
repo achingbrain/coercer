@@ -16,7 +16,9 @@ describe('coercer', function () {
       'grault': true,
       'garply': false,
       'waldo': 'undefined',
-      'fred': ['']
+      'fred': [''],
+      'string_number': '00001',
+      'hex_number': '0x00001'
     })
 
     expect(output.foo).to.be.true
@@ -31,5 +33,7 @@ describe('coercer', function () {
     expect(output.garply).to.be.false
     expect(output.waldo).to.be.undefined
     expect(output.fred[0]).to.equal('')
+    expect(output.string_number).to.equal('00001')
+    expect(output.hex_number).to.equal(0x00001)
   })
 })
